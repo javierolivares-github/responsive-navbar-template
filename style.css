@@ -1,0 +1,169 @@
+/* Google Fonts - Poppins 400, 500 and 800*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--aussie-red-61);
+}
+
+/* Variables */
+:root {
+  --gray-96: hsl(0, 0%, 96%);
+  --gray-10: hsl(0, 0%, 10%);
+  --yellow-sun-62: hsl(44, 100%, 62%);
+  --aussie-red-61: hsl(1, 80%, 61%);
+}
+
+
+/* (2) - Navbar style for desktop*/
+.navbar {
+  width: 100%;
+  height: 80px;
+  background: var(--gray-10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__container {
+  width: 1216px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 32px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: var(--gray-96);
+  text-decoration: none;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 16px 0px;
+  border-bottom: 2px solid transparent;
+  transition: all 300ms ease-out;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--gray-96);
+}
+
+.navbar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 16px;
+  border: none;
+  outline: none;
+  background: var(--yellow-sun-62);
+  color: var(--gray-10);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 300ms ease-out;
+}
+
+.navbar__item:hover {
+  border-bottom: 2px solid var(--gray-96);
+  transition: all 300ms ease-out;
+}
+
+.button:hover {
+  background: var(--aussie-red-61);
+  color: var(--gray-96);
+  transition: all 300ms ease-out;
+}
+
+/* (4) - Navbar style for tablet and mobile*/
+.menu__icon-menu {
+  color: var(--gray-96);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu__toggle {
+  display: none;
+}
+
+@media screen and (max-width: 834px) {
+  .navbar {
+    position: relative;
+    z-index: 3;
+  }
+
+  .navbar__container {
+    margin: 0px 40px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 28px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    background: var(--gray-10);
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 76px 40px;
+    opacity: 0;
+    transition: all 500ms ease-out;
+  }
+
+  .navbar__menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 500ms ease-out;
+  }
+
+  .menu__toggle {
+    display: block;
+  }
+}
+
+/* (6) - Some adjustments for mobile */
+@media screen and (max-width: 375px) {
+  .navbar__container {
+    margin: 0px 20px;
+  }
+}
